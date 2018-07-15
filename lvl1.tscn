@@ -1,4 +1,6 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
 
 [node name="Level 1" type="Node2D"]
 
@@ -13,5 +15,10 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 360.0
 margin/bottom = 640.0
+
+[node name="icon" type="Sprite" parent="background"]
+
+transform/pos = Vector2( 179.48, 282.746 )
+texture = ExtResource( 1 )
 
 

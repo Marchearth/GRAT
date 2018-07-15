@@ -43,10 +43,25 @@ func on_timer_timeout():
 	
 func on_start_button_pressed():
 	print('changing to new scene')
+	alpha_value = null
+	waitval = null
+	flicker_timer.queue_free()
+	flicker_timer = null
+	fade_out = null
+	change_val = null
+	max_limit = null
+	min_limit = null
 	get_tree().change_scene('res://lvl1_with_CRT.tscn')
 
 func on_credits_button_pressed():
 	print('changing to credits scene')
+	alpha_value = null
+	waitval = null
+	flicker_timer = null
+	fade_out = null
+	change_val = null
+	max_limit = null
+	min_limit = null
 	get_tree().change_scene('res://credits_with_CRT.tscn')
 	
 func _process(delta):

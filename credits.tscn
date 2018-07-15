@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://Commodore Pixelized v1.2.fnt" type="BitmapFont" id=1]
+
+[node name="Credits" type="Node2D"]
+
+[node name="background" type="Panel" parent="."]
+
+visibility/blend_mode = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 360.0
+margin/bottom = 640.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Credit Text" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 9.0
+margin/right = 347.0
+margin/bottom = 628.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.662745, 1, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "Credits and Mentions:
+-----------------------
+
+made by Bugra Coskun (github: Marchearth)
+using the Godot Engine,
+see more of my projects at marchearth.github.io
+
+Resources:
+-----------------------
+Main font: Commodore64Pixelized by Devin D. Cook (www.devincook.com)
+CRT Screen Shader: https://github.com/henriquelalves/SimpleGodotCRTShader
+"
+visible_characters = -1
+percent_visible = 1.0
+
+
