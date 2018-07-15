@@ -1,0 +1,17 @@
+[gd_scene format=1]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="background" type="Panel" parent="."]
+
+visibility/blend_mode = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 360.0
+margin/bottom = 640.0
+
+
