@@ -1,20 +1,31 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=20 format=1]
 
-[ext_resource path="res://Main_Menu.gd" type="Script" id=1]
-[ext_resource path="res://Main_Menu/GratHighResNeonGReen.png" type="Texture" id=2]
+[ext_resource path="res://CRTViewportDisplay/CRTDisplayShader.shd" type="Shader" id=1]
+[ext_resource path="res://Main_Menu.gd" type="Script" id=2]
 [ext_resource path="res://Main_Menu/75a4f64c5c95b6d80ac9874fb18fe6c3.png" type="Texture" id=3]
 [ext_resource path="res://Main_Menu/3a3ca4af1441e52ec17987d576fa1edc.png" type="Texture" id=4]
+[ext_resource path="res://Main_Menu/GratHighResNeonGReen.png" type="Texture" id=5]
+[ext_resource path="res://CRTViewportDisplay/CRTFrame.png" type="Texture" id=6]
+[ext_resource path="res://CRTViewportDisplay/white.png" type="Texture" id=7]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
+shader/shader = ExtResource( 1 )
 shader/shading_mode = 0
+shader_param/screen_width = 1024.0
+shader_param/screen_height = 600.0
+shader_param/BarrelPower = 1.1
+shader_param/color_bleeding = 1.2
+shader_param/bleeding_range_x = 3.0
+shader_param/bleeding_range_y = 3.0
+shader_param/lines_distance = 3.0
+shader_param/scan_size = 1.0
+shader_param/scanline_alpha = 0.9
+shader_param/lines_velocity = 0.0
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="CanvasItemMaterial" id=2]
 
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
+shader/shading_mode = 0
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -72,14 +83,45 @@ content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 
-[node name="Main_Menu" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id=11]
 
-script/script = ExtResource( 1 )
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="CanvasItemMaterial" id=12]
+
+shader/shader = ExtResource( 1 )
+shader/shading_mode = 0
+shader_param/screen_width = 360.0
+shader_param/screen_height = 640.0
+shader_param/BarrelPower = 1.06
+shader_param/color_bleeding = 0.3
+shader_param/bleeding_range_x = 1.0
+shader_param/bleeding_range_y = 1.0
+shader_param/lines_distance = 2.0
+shader_param/scan_size = 4.0
+shader_param/scanline_alpha = 0.8
+shader_param/lines_velocity = 5.0
+
+[node name="Main_Menu" type="Control"]
+
+material/material = SubResource( 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 360.0
+margin/bottom = 640.0
+script/script = ExtResource( 2 )
 
 [node name="background" type="Panel" parent="."]
 
 visibility/blend_mode = 3
-material/material = SubResource( 1 )
+material/material = SubResource( 2 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -92,12 +134,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="title" type="Sprite" parent="."]
-
-transform/pos = Vector2( 180, 79.5513 )
-transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-
 [node name="start_button" type="Button" parent="."]
 
 anchor/left = 3
@@ -109,14 +145,14 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -58.0
-margin/top = -252.0
-margin/right = -455.0
-margin/bottom = -438.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+margin/left = 91.0
+margin/top = 55.0
+margin/right = -306.0
+margin/bottom = -131.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -134,15 +170,43 @@ margin/left = 247.0
 margin/top = 511.0
 margin/right = 404.0
 margin/bottom = 697.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 icon = ExtResource( 4 )
 flat = true
+
+[node name="title" type="Sprite" parent="."]
+
+transform/pos = Vector2( 180, 79.5513 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="CRTFrame" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.332825, 0.787918 )
+z/relative = false
+texture = ExtResource( 6 )
+centered = false
+
+[node name="CRTShader" type="TextureFrame" parent="."]
+
+material/material = SubResource( 12 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 360.0
+margin/bottom = 640.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 0
 
 

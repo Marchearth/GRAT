@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var alpha_value = 1.0
 var waitval = 0.01 #If 0 it selects a random value
@@ -51,7 +51,7 @@ func on_start_button_pressed():
 	change_val = null
 	max_limit = null
 	min_limit = null
-	get_tree().change_scene('res://lvl1_with_CRT.tscn')
+	get_tree().change_scene('res://lvl1.tscn')
 
 func on_credits_button_pressed():
 	print('changing to credits scene')
@@ -62,7 +62,7 @@ func on_credits_button_pressed():
 	change_val = null
 	max_limit = null
 	min_limit = null
-	get_tree().change_scene('res://credits_with_CRT.tscn')
+	get_tree().change_scene('res://credits.tscn')
 	
 func _process(delta):
 	pass
