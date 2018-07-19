@@ -4,7 +4,7 @@ var alpha_value = 1.0
 var waitval = 0.01 #If 0 it selects a random value
 var flicker_timer
 var fade_out = true
-var change_val = 0.01# how much is it gonna increase/decrease alpha
+var change_val = 0.02# how much is it gonna increase/decrease alpha
 var max_limit = 1.0
 var min_limit = 0.1
 
@@ -20,6 +20,8 @@ func _ready():
 	 'on_start_button_pressed')
 	get_node('credits_button').connect('pressed', self,
 	 'on_credits_button_pressed')
+	
+	
 	
 
 func on_timer_timeout():
