@@ -24,4 +24,9 @@ margin/bottom = 640.0
 transform/pos = Vector2( 197.103, 572.263 )
 texture = ExtResource( 2 )
 
+[node name="icon1" type="Sprite" parent="background"]
+
+transform/pos = Vector2( 197.103, 572.263 )
+texture = ExtResource( 2 )
+
 
