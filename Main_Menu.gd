@@ -7,8 +7,10 @@ var fade_out = true
 var change_val = 0.02# how much is it gonna increase/decrease alpha
 var max_limit = 1.0
 var min_limit = 0.1
+var screen_res = get_viewport()
 
 func _ready():
+	print(screen_res)
 	flicker_timer = Timer.new()
 	flicker_timer.set_wait_time(waitval)
 	flicker_timer.set_one_shot(false)
@@ -21,9 +23,6 @@ func _ready():
 	get_node('credits_button').connect('pressed', self,
 	 'on_credits_button_pressed')
 	
-	
-	
-
 func on_timer_timeout():
 	if alpha_value <= min_limit:
 			fade_out = false
@@ -65,6 +64,3 @@ func on_credits_button_pressed():
 	max_limit = null
 	min_limit = null
 	get_tree().change_scene('res://credits.tscn')
-	
-func _process(delta):
-	pass
