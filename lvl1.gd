@@ -14,7 +14,7 @@ var mov_left = false
 var mov_right = false
 
 var dlt = 1 # delta
-var spd = 5 # how many pixels is it gonna move every frame
+var spd = 6 # how many pixels is it gonna move every frame
 var mov_range = 30 # how many pixels can player go on a single tap
 var mov_as_much = 0
 var range_counter = 0

@@ -75,7 +75,7 @@ content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 
-[sub_resource type="CanvasItemMaterial" id=12]
+[sub_resource type="CanvasItemMaterial" id=11]
 
 shader/shader = ExtResource( 3 )
 shader/shading_mode = 0
@@ -157,7 +157,7 @@ centered = false
 
 [node name="CRTShader" type="TextureFrame" parent="."]
 
-material/material = SubResource( 12 )
+material/material = SubResource( 11 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
