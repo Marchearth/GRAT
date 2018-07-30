@@ -1,13 +1,15 @@
-[gd_scene load_steps=29 format=1]
+[gd_scene load_steps=46 format=1]
 
 [ext_resource path="res://lvl1.gd" type="Script" id=1]
 [ext_resource path="res://Commodore Pixelized v1.2 for level.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://img/score_bg.png" type="Texture" id=3]
 [ext_resource path="res://img/pause_button_spr.png" type="Texture" id=4]
-[ext_resource path="res://img/PLAYER.png" type="Texture" id=5]
-[ext_resource path="res://CRTViewportDisplay/CRTFrame.png" type="Texture" id=6]
-[ext_resource path="res://CRTViewportDisplay/CRTDisplayShader.shd" type="Shader" id=7]
-[ext_resource path="res://CRTViewportDisplay/white.png" type="Texture" id=8]
+[ext_resource path="res://img/mov_button_sprite.png" type="Texture" id=5]
+[ext_resource path="res://img/shoot_button_sprite.png" type="Texture" id=6]
+[ext_resource path="res://img/PLAYER.png" type="Texture" id=7]
+[ext_resource path="res://CRTViewportDisplay/CRTFrame.png" type="Texture" id=8]
+[ext_resource path="res://CRTViewportDisplay/CRTDisplayShader.shd" type="Shader" id=9]
+[ext_resource path="res://CRTViewportDisplay/white.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -108,7 +110,7 @@ lossy_quality = 0.7
 [sub_resource type="BitmapFont" id=14]
 
 textures = [ SubResource( 13 ) ]
-chars = IntArray( 32, 0, 0, 0, 0, 0, 0, 14, 13, 96, 0, 117, 26, 9, 7, 5, 0, 16, 8224, 0, 53, 158, 13, 13, 1, 0, 16, 224, 0, 19, 231, 13, 14, 1, 0, 16, 192, 0, 87, 183, 13, 18, 1, -4, 16, 352, 0, 53, 375, 13, 18, 1, -4, 16, 64, 0, 53, 329, 13, 14, 1, 0, 16, 97, 0, 2, 195, 13, 10, 1, 4, 16, 8225, 0, 70, 158, 13, 13, 1, 0, 16, 225, 0, 2, 231, 13, 14, 1, 0, 16, 161, 0, 121, 141, 5, 14, 5, 0, 16, 193, 0, 104, 255, 13, 18, 1, -4, 16, 65, 0, 87, 317, 13, 14, 1, 0, 16, 33, 0, 121, 8, 5, 14, 5, 0, 16, 353, 0, 53, 100, 13, 14, 1, 0, 16, 34, 0, 36, 150, 13, 5, 1, 0, 16, 8226, 0, 104, 433, 9, 9, 3, 4, 16, 8482, 0, 60, 17, 15, 11, -1, -4, 16, 98, 0, 104, 148, 13, 12, 1, 2, 16, 226, 0, 104, 197, 13, 14, 1, 0, 16, 162, 0, 104, 389, 11, 14, 1, 0, 16, 194, 0, 36, 307, 13, 18, 1, -4, 16, 66, 0, 104, 313, 13, 14, 1, 0, 16, 99, 0, 50, 397, 11, 10, 1, 4, 16, 227, 0, 87, 205, 13, 14, 1, 0, 16, 163, 0, 22, 17, 15, 14, 1, 0, 16, 195, 0, 36, 329, 13, 18, 1, -4, 16, 67, 0, 2, 351, 13, 14, 1, 0, 16, 35, 0, 2, 20, 16, 14, 0, 0, 16, 164, 0, 87, 167, 13, 12, 1, 2, 16, 100, 0, 36, 177, 13, 12, 1, 2, 16, 228, 0, 70, 209, 13, 14, 1, 0, 16, 196, 0, 70, 307, 13, 18, 1, -4, 16, 68, 0, 19, 351, 13, 14, 1, 0, 16, 36, 0, 53, 82, 13, 14, 1, 0, 16, 101, 0, 36, 193, 13, 10, 1, 4, 16, 229, 0, 53, 227, 13, 14, 1, 0, 16, 197, 0, 53, 307, 13, 18, 1, -4, 16, 165, 0, 104, 371, 13, 14, 1, 0, 16, 69, 0, 20, 64, 13, 14, 1, 0, 16, 37, 0, 88, 80, 13, 14, 1, 0, 16, 710, 0, 117, 407, 9, 4, 3, -4, 16, 8230, 0, 82, 2, 16, 4, 0, 10, 18, 230, 0, 36, 136, 13, 10, 1, 4, 16, 102, 0, 85, 393, 11, 12, 3, 2, 16, 198, 0, 104, 215, 13, 14, 1, 0, 16, 70, 0, 37, 64, 13, 14, 1, 0, 16, 38, 0, 102, 8, 15, 14, 1, 0, 16, 711, 0, 91, 409, 9, 4, 3, -4, 16, 39, 0, 117, 433, 9, 7, 5, 0, 16, 103, 0, 53, 175, 13, 12, 1, 4, 16, 231, 0, 2, 415, 11, 12, 1, 4, 16, 199, 0, 19, 249, 13, 16, 1, 0, 16, 71, 0, 77, 62, 13, 14, 1, 0, 16, 168, 0, 69, 459, 7, 3, 2, -4, 16, 232, 0, 87, 335, 13, 14, 1, 0, 16, 200, 0, 19, 309, 13, 18, 1, -4, 16, 72, 0, 111, 62, 13, 14, 1, 0, 16, 40, 0, 43, 433, 9, 14, 3, 0, 16, 104, 0, 104, 98, 13, 14, 1, 0, 16, 713, 0, 53, 151, 13, 3, 1, -4, 16, 233, 0, 104, 331, 13, 14, 1, 0, 16, 201, 0, 2, 309, 13, 18, 1, -4, 16, 169, 0, 34, 397, 12, 14, 0, 0, 16, 41, 0, 28, 437, 9, 14, 3, 0, 16, 105, 0, 15, 455, 9, 14, 3, 0, 16, 73, 0, 78, 427, 9, 14, 3, 0, 16, 42, 0, 62, 2, 16, 11, 0, 2, 16, 234, 0, 70, 353, 13, 14, 1, 0, 16, 170, 0, 53, 249, 13, 15, 1, -4, 16, 202, 0, 87, 371, 13, 18, 1, -4, 16, 106, 0, 41, 451, 9, 14, 3, 2, 16, 74, 0, 2, 82, 13, 14, 1, 0, 16, 171, 0, 22, 2, 16, 11, 0, 2, 16, 43, 0, 104, 164, 13, 11, 1, 2, 16, 107, 0, 53, 209, 13, 14, 1, 0, 16, 203, 0, 70, 371, 13, 18, 1, -4, 16, 235, 0, 87, 353, 13, 14, 1, 0, 16, 75, 0, 94, 62, 13, 14, 1, 0, 16, 172, 0, 19, 150, 13, 5, 1, 6, 16, 44, 0, 100, 446, 7, 6, 3, 10, 16, 108, 0, 63, 431, 9, 14, 3, 0, 16, 204, 0, 65, 409, 9, 18, 3, -4, 16, 236, 0, 2, 455, 9, 14, 3, 0, 16, 8364, 0, 105, 80, 13, 14, 1, 0, 16, 76, 0, 54, 64, 13, 14, 1, 0, 16, 45, 0, 70, 151, 13, 3, 1, 6, 16, 109, 0, 79, 26, 15, 10, 1, 4, 16, 205, 0, 50, 411, 9, 18, 3, -4, 16, 237, 0, 28, 455, 9, 14, 3, 0, 16, 77, 0, 2, 38, 15, 14, 1, 0, 16, 46, 0, 121, 168, 5, 4, 5, 10, 16, 110, 0, 53, 191, 13, 10, 1, 4, 16, 206, 0, 30, 415, 9, 18, 3, -4, 16, 174, 0, 2, 397, 12, 14, 0, 0, 16, 238, 0, 78, 409, 9, 14, 3, 0, 16, 78, 0, 113, 44, 13, 14, 1, 0, 16, 175, 0, 104, 141, 13, 3, 1, -4, 16, 111, 0, 70, 116, 13, 10, 1, 4, 16, 47, 0, 41, 35, 15, 12, 1, 2, 16, 79, 0, 19, 159, 13, 14, 1, 0, 16, 207, 0, 17, 415, 9, 18, 3, -4, 16, 239, 0, 104, 407, 9, 14, 3, 0, 16, 8208, 0, 70, 144, 13, 3, 1, 6, 16, 176, 0, 56, 449, 9, 9, 3, 0, 16, 112, 0, 19, 177, 13, 12, 1, 4, 16, 80, 0, 36, 159, 13, 14, 1, 0, 16, 208, 0, 87, 223, 13, 14, 1, 0, 16, 8240, 0, 2, 2, 16, 14, 0, 0, 16, 48, 0, 70, 98, 13, 14, 1, 0, 16, 305, 0, 76, 446, 9, 9, 3, -4, 16, 113, 0, 2, 179, 13, 12, 1, 4, 16, 81, 0, 2, 161, 13, 14, 1, 0, 16, 241, 0, 53, 268, 13, 14, 1, 0, 16, 209, 0, 36, 375, 13, 18, 1, -4, 16, 49, 0, 87, 98, 13, 14, 1, 0, 16, 114, 0, 87, 116, 13, 10, 1, 4, 16, 82, 0, 60, 46, 13, 14, 1, 0, 16, 242, 0, 70, 249, 13, 14, 1, 0, 16, 210, 0, 19, 375, 13, 18, 1, -4, 16, 402, 0, 104, 295, 13, 14, 1, 0, 16, 50, 0, 36, 118, 13, 14, 1, 0, 16, 338, 0, 2, 56, 14, 14, 0, 0, 16, 211, 0, 104, 233, 13, 18, 1, -4, 16, 51, 0, 53, 118, 13, 14, 1, 0, 16, 8211, 0, 117, 37, 9, 3, 1, 8, 16, 115, 0, 2, 136, 13, 10, 1, 4, 16, 339, 0, 19, 193, 13, 10, 1, 4, 16, 83, 0, 79, 44, 13, 14, 1, 0, 16, 243, 0, 87, 241, 13, 14, 1, 0, 16, 180, 0, 121, 134, 5, 3, 5, -4, 16, 8212, 0, 87, 144, 13, 3, 1, 8, 16, 116, 0, 87, 151, 13, 12, 1, 2, 16, 244, 0, 2, 291, 13, 14, 1, 0, 16, 212, 0, 19, 269, 13, 18, 1, -4, 16, 52, 0, 98, 26, 15, 14, 1, 0, 16, 84, 0, 96, 44, 13, 14, 1, 0, 16, 117, 0, 19, 136, 13, 10, 1, 4, 16, 245, 0, 19, 291, 13, 14, 1, 0, 16, 213, 0, 70, 267, 13, 18, 1, -4, 16, 53, 0, 19, 118, 13, 14, 1, 0, 16, 85, 0, 19, 82, 13, 14, 1, 0, 16, 118, 0, 70, 130, 13, 10, 1, 4, 16, 182, 0, 36, 353, 13, 14, 1, 0, 16, 246, 0, 36, 289, 13, 14, 1, 0, 16, 214, 0, 87, 259, 13, 18, 1, -4, 16, 54, 0, 2, 118, 13, 14, 1, 0, 16, 86, 0, 36, 82, 13, 14, 1, 0, 16, 183, 0, 121, 159, 5, 5, 5, 6, 16, 119, 0, 60, 32, 15, 10, 1, 4, 16, 215, 0, 70, 393, 11, 11, 1, 3, 16, 247, 0, 53, 289, 13, 14, 1, 0, 16, 55, 0, 70, 289, 13, 14, 1, 0, 16, 87, 0, 41, 17, 15, 14, 1, 0, 16, 184, 0, 89, 446, 7, 2, 1, 14, 16, 728, 0, 119, 389, 7, 4, 3, -4, 16, 8216, 0, 117, 444, 7, 7, 7, 0, 16, 120, 0, 87, 130, 13, 10, 1, 4, 16, 248, 0, 104, 116, 13, 10, 1, 4, 16, 216, 0, 36, 231, 13, 14, 1, 0, 16, 376, 0, 104, 349, 13, 18, 1, -4, 16, 56, 0, 87, 281, 13, 14, 1, 0, 16, 88, 0, 71, 80, 13, 14, 1, 0, 16, 8729, 0, 121, 176, 5, 5, 5, 6, 16, 8217, 0, 54, 462, 7, 7, 1, 0, 16, 121, 0, 70, 175, 13, 12, 1, 4, 16, 249, 0, 70, 191, 13, 14, 1, 0, 16, 217, 0, 36, 209, 13, 18, 1, -4, 16, 57, 0, 104, 277, 13, 14, 1, 0, 16, 8249, 0, 2, 437, 9, 14, 3, 0, 16, 89, 0, 2, 100, 13, 14, 1, 0, 16, 122, 0, 53, 136, 13, 10, 1, 4, 16, 250, 0, 104, 179, 13, 14, 1, 0, 16, 186, 0, 36, 249, 13, 15, 1, -4, 16, 218, 0, 70, 227, 13, 18, 1, -4, 16, 58, 0, 121, 98, 5, 14, 5, 0, 16, 8250, 0, 15, 437, 9, 14, 3, 0, 16, 90, 0, 19, 100, 13, 14, 1, 0, 16, 731, 0, 119, 397, 7, 2, 1, 14, 16, 187, 0, 42, 2, 16, 11, 0, 2, 16, 251, 0, 2, 209, 13, 14, 1, 0, 16, 123, 0, 2, 269, 13, 14, 1, 0, 16, 59, 0, 2, 473, 7, 16, 3, 0, 16, 219, 0, 2, 371, 13, 18, 1, -4, 16, 91, 0, 91, 425, 9, 14, 3, 0, 16, 8220, 0, 22, 35, 15, 7, 1, 0, 16, 92, 0, 82, 10, 15, 12, 1, 2, 16, 252, 0, 19, 209, 13, 14, 1, 0, 16, 124, 0, 121, 116, 5, 14, 5, 0, 16, 220, 0, 53, 353, 13, 18, 1, -4, 16, 60, 0, 87, 299, 13, 14, 1, 0, 16, 61, 0, 104, 130, 13, 7, 1, 4, 16, 8221, 0, 21, 51, 14, 7, 0, 0, 16, 125, 0, 36, 268, 13, 14, 1, 0, 16, 93, 0, 117, 415, 9, 14, 3, 0, 16, 8222, 0, 39, 51, 14, 6, 0, 10, 16, 126, 0, 2, 150, 13, 7, 1, 0, 16, 62, 0, 2, 331, 13, 14, 1, 0, 16, 94, 0, 36, 100, 13, 14, 1, 0, 16, 95, 0, 102, 2, 16, 2, 0, 12, 16, 191, 0, 70, 335, 13, 14, 1, 0, 16, 223, 0, 18, 397, 12, 14, 0, 0, 12, 255, 0, 2, 249, 13, 16, 1, 0, 16, 63, 0, 19, 331, 13, 14, 1, 0, 16 )
+chars = IntArray( 64, 0, 53, 329, 13, 14, 1, 0, 16, 352, 0, 53, 375, 13, 18, 1, -4, 16, 192, 0, 87, 183, 13, 18, 1, -4, 16, 224, 0, 19, 231, 13, 14, 1, 0, 16, 8224, 0, 53, 158, 13, 13, 1, 0, 16, 96, 0, 117, 26, 9, 7, 5, 0, 16, 32, 0, 0, 0, 0, 0, 0, 14, 13, 353, 0, 53, 100, 13, 14, 1, 0, 16, 33, 0, 121, 8, 5, 14, 5, 0, 16, 65, 0, 87, 317, 13, 14, 1, 0, 16, 193, 0, 104, 255, 13, 18, 1, -4, 16, 161, 0, 121, 141, 5, 14, 5, 0, 16, 225, 0, 2, 231, 13, 14, 1, 0, 16, 8225, 0, 70, 158, 13, 13, 1, 0, 16, 97, 0, 2, 195, 13, 10, 1, 4, 16, 66, 0, 104, 313, 13, 14, 1, 0, 16, 194, 0, 36, 307, 13, 18, 1, -4, 16, 162, 0, 104, 389, 11, 14, 1, 0, 16, 226, 0, 104, 197, 13, 14, 1, 0, 16, 98, 0, 104, 148, 13, 12, 1, 2, 16, 8482, 0, 60, 17, 15, 11, -1, -4, 16, 8226, 0, 104, 433, 9, 9, 3, 4, 16, 34, 0, 36, 150, 13, 5, 1, 0, 16, 35, 0, 2, 20, 16, 14, 0, 0, 16, 67, 0, 2, 351, 13, 14, 1, 0, 16, 195, 0, 36, 329, 13, 18, 1, -4, 16, 163, 0, 22, 17, 15, 14, 1, 0, 16, 227, 0, 87, 205, 13, 14, 1, 0, 16, 99, 0, 50, 397, 11, 10, 1, 4, 16, 36, 0, 53, 82, 13, 14, 1, 0, 16, 68, 0, 19, 351, 13, 14, 1, 0, 16, 196, 0, 70, 307, 13, 18, 1, -4, 16, 228, 0, 70, 209, 13, 14, 1, 0, 16, 100, 0, 36, 177, 13, 12, 1, 2, 16, 164, 0, 87, 167, 13, 12, 1, 2, 16, 37, 0, 88, 80, 13, 14, 1, 0, 16, 69, 0, 20, 64, 13, 14, 1, 0, 16, 165, 0, 104, 371, 13, 14, 1, 0, 16, 197, 0, 53, 307, 13, 18, 1, -4, 16, 229, 0, 53, 227, 13, 14, 1, 0, 16, 101, 0, 36, 193, 13, 10, 1, 4, 16, 38, 0, 102, 8, 15, 14, 1, 0, 16, 70, 0, 37, 64, 13, 14, 1, 0, 16, 198, 0, 104, 215, 13, 14, 1, 0, 16, 102, 0, 85, 393, 11, 12, 3, 2, 16, 230, 0, 36, 136, 13, 10, 1, 4, 16, 8230, 0, 82, 2, 16, 4, 0, 10, 18, 710, 0, 117, 407, 9, 4, 3, -4, 16, 71, 0, 77, 62, 13, 14, 1, 0, 16, 199, 0, 19, 249, 13, 16, 1, 0, 16, 231, 0, 2, 415, 11, 12, 1, 4, 16, 103, 0, 53, 175, 13, 12, 1, 4, 16, 39, 0, 117, 433, 9, 7, 5, 0, 16, 711, 0, 91, 409, 9, 4, 3, -4, 16, 104, 0, 104, 98, 13, 14, 1, 0, 16, 40, 0, 43, 433, 9, 14, 3, 0, 16, 72, 0, 111, 62, 13, 14, 1, 0, 16, 200, 0, 19, 309, 13, 18, 1, -4, 16, 232, 0, 87, 335, 13, 14, 1, 0, 16, 168, 0, 69, 459, 7, 3, 2, -4, 16, 41, 0, 28, 437, 9, 14, 3, 0, 16, 169, 0, 34, 397, 12, 14, 0, 0, 16, 201, 0, 2, 309, 13, 18, 1, -4, 16, 233, 0, 104, 331, 13, 14, 1, 0, 16, 713, 0, 53, 151, 13, 3, 1, -4, 16, 105, 0, 15, 455, 9, 14, 3, 0, 16, 73, 0, 78, 427, 9, 14, 3, 0, 16, 42, 0, 62, 2, 16, 11, 0, 2, 16, 234, 0, 70, 353, 13, 14, 1, 0, 16, 170, 0, 53, 249, 13, 15, 1, -4, 16, 202, 0, 87, 371, 13, 18, 1, -4, 16, 106, 0, 41, 451, 9, 14, 3, 2, 16, 74, 0, 2, 82, 13, 14, 1, 0, 16, 171, 0, 22, 2, 16, 11, 0, 2, 16, 43, 0, 104, 164, 13, 11, 1, 2, 16, 107, 0, 53, 209, 13, 14, 1, 0, 16, 203, 0, 70, 371, 13, 18, 1, -4, 16, 235, 0, 87, 353, 13, 14, 1, 0, 16, 75, 0, 94, 62, 13, 14, 1, 0, 16, 172, 0, 19, 150, 13, 5, 1, 6, 16, 44, 0, 100, 446, 7, 6, 3, 10, 16, 108, 0, 63, 431, 9, 14, 3, 0, 16, 204, 0, 65, 409, 9, 18, 3, -4, 16, 236, 0, 2, 455, 9, 14, 3, 0, 16, 8364, 0, 105, 80, 13, 14, 1, 0, 16, 76, 0, 54, 64, 13, 14, 1, 0, 16, 45, 0, 70, 151, 13, 3, 1, 6, 16, 109, 0, 79, 26, 15, 10, 1, 4, 16, 205, 0, 50, 411, 9, 18, 3, -4, 16, 237, 0, 28, 455, 9, 14, 3, 0, 16, 77, 0, 2, 38, 15, 14, 1, 0, 16, 46, 0, 121, 168, 5, 4, 5, 10, 16, 110, 0, 53, 191, 13, 10, 1, 4, 16, 206, 0, 30, 415, 9, 18, 3, -4, 16, 174, 0, 2, 397, 12, 14, 0, 0, 16, 238, 0, 78, 409, 9, 14, 3, 0, 16, 78, 0, 113, 44, 13, 14, 1, 0, 16, 175, 0, 104, 141, 13, 3, 1, -4, 16, 111, 0, 70, 116, 13, 10, 1, 4, 16, 47, 0, 41, 35, 15, 12, 1, 2, 16, 79, 0, 19, 159, 13, 14, 1, 0, 16, 207, 0, 17, 415, 9, 18, 3, -4, 16, 239, 0, 104, 407, 9, 14, 3, 0, 16, 8208, 0, 70, 144, 13, 3, 1, 6, 16, 176, 0, 56, 449, 9, 9, 3, 0, 16, 112, 0, 19, 177, 13, 12, 1, 4, 16, 80, 0, 36, 159, 13, 14, 1, 0, 16, 208, 0, 87, 223, 13, 14, 1, 0, 16, 8240, 0, 2, 2, 16, 14, 0, 0, 16, 48, 0, 70, 98, 13, 14, 1, 0, 16, 305, 0, 76, 446, 9, 9, 3, -4, 16, 113, 0, 2, 179, 13, 12, 1, 4, 16, 81, 0, 2, 161, 13, 14, 1, 0, 16, 241, 0, 53, 268, 13, 14, 1, 0, 16, 209, 0, 36, 375, 13, 18, 1, -4, 16, 49, 0, 87, 98, 13, 14, 1, 0, 16, 114, 0, 87, 116, 13, 10, 1, 4, 16, 82, 0, 60, 46, 13, 14, 1, 0, 16, 242, 0, 70, 249, 13, 14, 1, 0, 16, 210, 0, 19, 375, 13, 18, 1, -4, 16, 402, 0, 104, 295, 13, 14, 1, 0, 16, 50, 0, 36, 118, 13, 14, 1, 0, 16, 338, 0, 2, 56, 14, 14, 0, 0, 16, 243, 0, 87, 241, 13, 14, 1, 0, 16, 211, 0, 104, 233, 13, 18, 1, -4, 16, 51, 0, 53, 118, 13, 14, 1, 0, 16, 8211, 0, 117, 37, 9, 3, 1, 8, 16, 115, 0, 2, 136, 13, 10, 1, 4, 16, 339, 0, 19, 193, 13, 10, 1, 4, 16, 83, 0, 79, 44, 13, 14, 1, 0, 16, 84, 0, 96, 44, 13, 14, 1, 0, 16, 52, 0, 98, 26, 15, 14, 1, 0, 16, 212, 0, 19, 269, 13, 18, 1, -4, 16, 244, 0, 2, 291, 13, 14, 1, 0, 16, 116, 0, 87, 151, 13, 12, 1, 2, 16, 8212, 0, 87, 144, 13, 3, 1, 8, 16, 180, 0, 121, 134, 5, 3, 5, -4, 16, 85, 0, 19, 82, 13, 14, 1, 0, 16, 53, 0, 19, 118, 13, 14, 1, 0, 16, 213, 0, 70, 267, 13, 18, 1, -4, 16, 245, 0, 19, 291, 13, 14, 1, 0, 16, 117, 0, 19, 136, 13, 10, 1, 4, 16, 86, 0, 36, 82, 13, 14, 1, 0, 16, 54, 0, 2, 118, 13, 14, 1, 0, 16, 214, 0, 87, 259, 13, 18, 1, -4, 16, 246, 0, 36, 289, 13, 14, 1, 0, 16, 182, 0, 36, 353, 13, 14, 1, 0, 16, 118, 0, 70, 130, 13, 10, 1, 4, 16, 87, 0, 41, 17, 15, 14, 1, 0, 16, 55, 0, 70, 289, 13, 14, 1, 0, 16, 247, 0, 53, 289, 13, 14, 1, 0, 16, 215, 0, 70, 393, 11, 11, 1, 3, 16, 119, 0, 60, 32, 15, 10, 1, 4, 16, 183, 0, 121, 159, 5, 5, 5, 6, 16, 88, 0, 71, 80, 13, 14, 1, 0, 16, 56, 0, 87, 281, 13, 14, 1, 0, 16, 376, 0, 104, 349, 13, 18, 1, -4, 16, 216, 0, 36, 231, 13, 14, 1, 0, 16, 248, 0, 104, 116, 13, 10, 1, 4, 16, 120, 0, 87, 130, 13, 10, 1, 4, 16, 8216, 0, 117, 444, 7, 7, 7, 0, 16, 728, 0, 119, 389, 7, 4, 3, -4, 16, 184, 0, 89, 446, 7, 2, 1, 14, 16, 89, 0, 2, 100, 13, 14, 1, 0, 16, 8249, 0, 2, 437, 9, 14, 3, 0, 16, 57, 0, 104, 277, 13, 14, 1, 0, 16, 217, 0, 36, 209, 13, 18, 1, -4, 16, 249, 0, 70, 191, 13, 14, 1, 0, 16, 121, 0, 70, 175, 13, 12, 1, 4, 16, 8217, 0, 54, 462, 7, 7, 1, 0, 16, 8729, 0, 121, 176, 5, 5, 5, 6, 16, 90, 0, 19, 100, 13, 14, 1, 0, 16, 8250, 0, 15, 437, 9, 14, 3, 0, 16, 58, 0, 121, 98, 5, 14, 5, 0, 16, 218, 0, 70, 227, 13, 18, 1, -4, 16, 186, 0, 36, 249, 13, 15, 1, -4, 16, 250, 0, 104, 179, 13, 14, 1, 0, 16, 122, 0, 53, 136, 13, 10, 1, 4, 16, 91, 0, 91, 425, 9, 14, 3, 0, 16, 219, 0, 2, 371, 13, 18, 1, -4, 16, 59, 0, 2, 473, 7, 16, 3, 0, 16, 123, 0, 2, 269, 13, 14, 1, 0, 16, 251, 0, 2, 209, 13, 14, 1, 0, 16, 187, 0, 42, 2, 16, 11, 0, 2, 16, 731, 0, 119, 397, 7, 2, 1, 14, 16, 60, 0, 87, 299, 13, 14, 1, 0, 16, 220, 0, 53, 353, 13, 18, 1, -4, 16, 124, 0, 121, 116, 5, 14, 5, 0, 16, 252, 0, 19, 209, 13, 14, 1, 0, 16, 92, 0, 82, 10, 15, 12, 1, 2, 16, 8220, 0, 22, 35, 15, 7, 1, 0, 16, 93, 0, 117, 415, 9, 14, 3, 0, 16, 125, 0, 36, 268, 13, 14, 1, 0, 16, 8221, 0, 21, 51, 14, 7, 0, 0, 16, 61, 0, 104, 130, 13, 7, 1, 4, 16, 94, 0, 36, 100, 13, 14, 1, 0, 16, 62, 0, 2, 331, 13, 14, 1, 0, 16, 126, 0, 2, 150, 13, 7, 1, 0, 16, 8222, 0, 39, 51, 14, 6, 0, 10, 16, 63, 0, 19, 331, 13, 14, 1, 0, 16, 255, 0, 2, 249, 13, 16, 1, 0, 16, 223, 0, 18, 397, 12, 14, 0, 0, 12, 191, 0, 70, 335, 13, 14, 1, 0, 16, 95, 0, 102, 2, 16, 2, 0, 12, 16 )
 kernings = IntArray(  )
 height = 16.0
 ascent = 14.0
@@ -149,9 +151,114 @@ content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 
+[sub_resource type="StyleBoxEmpty" id=21]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=25]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=27]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=28]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=30]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=31]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=32]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=33]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=34]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=35]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
 [sub_resource type="CanvasItemMaterial" id=20]
 
-shader/shader = ExtResource( 7 )
+shader/shader = ExtResource( 9 )
 shader/shading_mode = 0
 shader_param/screen_width = 360.0
 shader_param/screen_height = 640.0
@@ -406,21 +513,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="score" type="Label" parent="topmenu/topmenu_container"]
-
-visibility/visible = false
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 181.0
-margin/top = 33.0
-margin/right = 181.0
-margin/bottom = 47.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="score_bg " type="Button" parent="topmenu/topmenu_container"]
 
 focus/ignore_mouse = false
@@ -448,9 +540,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 13.0
+margin/left = 12.0
 margin/top = 25.0
-margin/right = 77.0
+margin/right = 76.0
 margin/bottom = 41.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -487,23 +579,153 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 560.0
+margin/top = 540.0
 margin/right = 360.0
 margin/bottom = 640.0
 custom_styles/panel = SubResource( 11 )
 script/script = SubResource( 12 )
 
-[node name="player " type="Sprite" parent="."]
+[node name="button_group" type="HBoxContainer" parent="bottommenu"]
 
-transform/pos = Vector2( 180, 520 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 40.0
+margin/top = 5.0
+margin/right = 340.0
+margin/bottom = 91.0
+custom_constants/separation = 20
+alignment = 0
+
+[node name="button_left" type="Button" parent="bottommenu/button_group"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 80.0
+margin/bottom = 86.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/focus = SubResource( 23 )
+custom_styles/disabled = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 5 )
+flat = true
+
+[node name="button_left_label" type="Label" parent="bottommenu/button_group/button_left"]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 4.0
+margin/top = 14.0
+margin/right = 20.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.662745, 1, 0, 1 )
+text = "<"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="button_shoot" type="Button" parent="bottommenu/button_group"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 0.0
+margin/right = 180.0
+margin/bottom = 86.0
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/disabled = SubResource( 29 )
+custom_styles/normal = SubResource( 30 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 6 )
+flat = true
+
+[node name="button_shoot_label1" type="Label" parent="bottommenu/button_group/button_shoot"]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 6.0
+margin/top = 12.0
+margin/right = 22.0
+margin/bottom = 28.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="button_right" type="Button" parent="bottommenu/button_group"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 200.0
+margin/top = 0.0
+margin/right = 280.0
+margin/bottom = 86.0
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/focus = SubResource( 33 )
+custom_styles/disabled = SubResource( 34 )
+custom_styles/normal = SubResource( 35 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 5 )
+flat = true
+
+[node name="button_right_label1" type="Label" parent="bottommenu/button_group/button_right"]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 10.0
+margin/top = 14.0
+margin/right = 26.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.662745, 1, 0, 1 )
+text = ">"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="player" type="Sprite" parent="."]
+
+transform/pos = Vector2( 180, 500 )
 transform/scale = Vector2( 0.8, 0.6 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="CRTFrame" type="Sprite" parent="."]
 
 transform/scale = Vector2( 0.332825, 0.787918 )
 z/relative = false
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="CRTShader" type="TextureFrame" parent="."]
@@ -517,7 +739,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 360.0
 margin/bottom = 640.0
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 expand = true
 stretch_mode = 0
 

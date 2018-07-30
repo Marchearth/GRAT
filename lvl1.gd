@@ -29,7 +29,7 @@ var cleanup_timer
 var linear = false
 
 var last_wave
-
+var player_pos
 func _ready():
 	randomize()
 	set_fixed_process(true)
@@ -37,9 +37,9 @@ func _ready():
 	midline_arr.append(Vector2(screen_size.x/2,0)) #points for middle line
 	midline_arr.append(Vector2(screen_size.x/2,screen_size.y))
 
-	get_node("button_left").connect("pressed", self,
+	get_node("bottommenu/button_group/button_left").connect("pressed", self,
 	"on_button_left_pressed")
-	get_node("button_right").connect("pressed", self,
+	get_node("bottommenu/button_group/button_right").connect("pressed", self,
 	"on_button_right_pressed")
 
 	#create starting dot and connect it to middle line
@@ -58,6 +58,23 @@ func _ready():
 	# Call function when it timesout
 	add_child(cleanup_timer)
 	cleanup_timer.start()
+
+func _fixed_process(delta):
+	if get_node("bottommenu/button_group/button_left").is_pressed() == true &&\
+	get_node("bottommenu/button_group/button_right").is_pressed() != true:
+		player_pos = get_node("player").get_pos()
+		player_pos.x -= spd
+		get_node("player").set_pos(player_pos)
+
+	elif get_node("bottommenu/button_group/button_right").is_pressed() == true &&\
+	get_node("bottommenu/button_group/button_left").is_pressed() != true:
+		player_pos = get_node("player").get_pos()
+		player_pos.x += spd
+		get_node("player").set_pos(player_pos)
+
+	ifed_create_new_wave()
+	mov_waves(spd)
+	update()
 
 func ifed_create_new_wave():
 	if waves_arr[waves_arr.size()-1].y >= 0: # if last point is in the edge of the top screen
@@ -80,18 +97,7 @@ func mov_waves(speed):
 	for i in range(0, waves_arr.size()):
 		waves_arr[i].y += spd # move every wave by spd down
 
-func _fixed_process(delta):
-	if get_node("button_left").is_pressed() == true &&\
-	get_node("button_right").is_pressed() != true:
-		var lore = get_node("player").get_pos()
 
-	elif get_node("button_right").is_pressed() == true &&\
-	get_node("button_left").is_pressed() != true:
-		pass
-
-	ifed_create_new_wave()
-	mov_waves(spd)
-	update()
 
 func _draw():
 	draw_line(midline_arr[0], midline_arr[1], Color(0.633, 1.0, 0,
