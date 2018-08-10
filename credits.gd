@@ -1,7 +1,7 @@
 extends Node2D
 
 var text_timer
-var waitval = 0.3 # time between text lines
+var waitval = 0.1 # time between text lines
 var step = 0 #Which text to show by step
 var legal_string = ''
 var text_to_show = ['Credits and Sources',
@@ -17,7 +17,11 @@ var text_to_show = ['Credits and Sources',
 '',
 'CRT Effect: ',
 'SimpleGodotCRTShader',
-'by Henrique Alves ' 
+'by Henrique Alves ',
+'',
+'Graphic Design:',
+'Gorkem Goger',
+'dalugnswood@outlook.com'
  ]
 
 func _ready():
@@ -32,8 +36,10 @@ func _ready():
 	get_node('creditext').clear() #Clear up test text from text box
 	
 func on_timer_timeout():
-	print('timer timeout')
-	legal_string = '> ' + text_to_show[step] + '\n'
+	if text_to_show[step] != '':
+		legal_string = '> ' + text_to_show[step] + '\n'
+	else:
+		legal_string = text_to_show[step] + '\n'
 	get_node('creditext').add_text(legal_string)
 	step += 1
 	if step == text_to_show.size():

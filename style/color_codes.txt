@@ -1,0 +1,2 @@
+Background: 0f0f0f <-- greyish looks better in phone screens
+Line Green: a9ff00 <-- neonish green

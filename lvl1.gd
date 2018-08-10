@@ -1,7 +1,7 @@
 extends Node2D
 # drawings move each frame some pixels thats speed
 const usual_green = Color(0.633, 1.0, 0.0, 1.0)
-const energy_trace_green = Color(0.633, 1.0, 0.0, 0.5)
+const energy_trace_green = Color(0.633, 1.0, 0.0, 1)
 const midline_alpha = 1.0
 const waitval = 0.2 # wait for 0.2 seconds
 
@@ -37,11 +37,6 @@ func _ready():
 	midline_arr.append(Vector2(screen_size.x/2,0)) #points for middle line
 	midline_arr.append(Vector2(screen_size.x/2,screen_size.y))
 
-	get_node("bottommenu/button_group/button_left").connect("pressed", self,
-	"on_button_left_pressed")
-	get_node("bottommenu/button_group/button_right").connect("pressed", self,
-	"on_button_right_pressed")
-
 	#create starting dot and connect it to middle line
 	screen_width = int(screen_width)
 	midline_x = screen_width/2
@@ -61,20 +56,29 @@ func _ready():
 
 func _fixed_process(delta):
 	if get_node("bottommenu/button_group/button_left").is_pressed() == true &&\
-	get_node("bottommenu/button_group/button_right").is_pressed() != true:
+	get_node("bottommenu/button_group/button_right").is_pressed() != true :
 		player_pos = get_node("player").get_pos()
-		player_pos.x -= spd
-		get_node("player").set_pos(player_pos)
+		if player_pos.x > 0:
+			player_pos.x -= spd#*delta
+			get_node("player").set_pos(player_pos)
 
 	elif get_node("bottommenu/button_group/button_right").is_pressed() == true &&\
 	get_node("bottommenu/button_group/button_left").is_pressed() != true:
 		player_pos = get_node("player").get_pos()
-		player_pos.x += spd
-		get_node("player").set_pos(player_pos)
+		if player_pos.x < screen_width:
+			player_pos.x += spd#*delta
+			get_node("player").set_pos(player_pos)
 
 	ifed_create_new_wave()
-	mov_waves(spd)
+	mov_waves(spd, 1)
 	update()
+
+func _draw():
+	draw_line(midline_arr[0], midline_arr[1], Color(0.633, 1.0, 0,
+	midline_alpha), 0.01) #midline
+
+	for i in range(0, waves_arr.size() - 1):
+		draw_line(waves_arr[i], waves_arr[i+1], energy_trace_green, 4)
 
 func ifed_create_new_wave():
 	if waves_arr[waves_arr.size()-1].y >= 0: # if last point is in the edge of the top screen
@@ -93,24 +97,9 @@ func ifed_destroy_old_wave():
 	if waves_arr[0] != null && waves_arr[1].y > 640:
 		waves_arr.remove(0)
 
-func mov_waves(speed):
+func mov_waves(speed, dlt):
 	for i in range(0, waves_arr.size()):
-		waves_arr[i].y += spd # move every wave by spd down
-
-
-
-func _draw():
-	draw_line(midline_arr[0], midline_arr[1], Color(0.633, 1.0, 0,
-	midline_alpha), 0.01) #midline
-
-	for i in range(0, waves_arr.size() - 1):
-		draw_line(waves_arr[i], waves_arr[i+1], energy_trace_green, 4)
-
-func on_button_left_pressed():
-	mov_left = true
-
-func on_button_right_pressed():
-	mov_right = true
+		waves_arr[i].y += spd*dlt # move every wave by spd down
 
 func absolute(val): # get absolute
 	if val < 0:
