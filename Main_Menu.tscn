@@ -28,6 +28,13 @@ shader_param/lines_velocity = 0.0
 
 shader/shading_mode = 0
 
+[sub_resource type="StyleBoxEmpty" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
 [sub_resource type="StyleBoxEmpty" id=4]
 
 content_margin/left = -1.0
@@ -84,14 +91,7 @@ content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 
-[sub_resource type="StyleBoxEmpty" id=12]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-
-[sub_resource type="CanvasItemMaterial" id=13]
+[sub_resource type="CanvasItemMaterial" id=12]
 
 shader/shader = ExtResource( 1 )
 shader/shading_mode = 0
@@ -106,7 +106,7 @@ shader_param/scan_size = 4.0
 shader_param/scanline_alpha = 0.8
 shader_param/lines_velocity = 5.0
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=13]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -163,10 +163,10 @@ margin/left = 91.0
 margin/top = 55.0
 margin/right = -306.0
 margin/bottom = -131.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -184,11 +184,11 @@ margin/left = 247.0
 margin/top = 511.0
 margin/right = 404.0
 margin/bottom = 697.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -210,7 +210,7 @@ centered = false
 
 [node name="CRTShader" type="TextureFrame" parent="."]
 
-material/material = SubResource( 13 )
+material/material = SubResource( 12 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -233,6 +233,6 @@ margin/left = 0.0
 margin/top = 632.0
 margin/right = 360.0
 margin/bottom = 672.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 13 )
 
 

@@ -1,11 +1,6 @@
 Ideas for Grat:
-As you stay in the lines your energy charges and with that energy you can destroy enemy ships 
-but be aware because there will be mines in the energy rails.
-There will be bosses... maybe ?
-Power ups on energy lines
-top left corner will be the info,
-
-health 100%
-energy 100%
-calibration 100% <-- energy starts charging when this is 100%
-when lost health screen glitches
+Left to right movement, go upwards as long as the [!] is pressed
+otherwise go down.
+don't crash into the column type walls
+game gets faster the longer you play
+shoot the meteors
