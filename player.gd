@@ -32,8 +32,12 @@ func _fixed_process(delta):
 
 	# VERTICAL MOVEMENT
 	if get_parent().get_node("bottommenu/button_group/button_jump").is_pressed() == true:
-		if get_pos().y > 680 : pass #GAME OVER
+
+		if get_pos().y > 680 :
+			pass #GAME OVER
+
 		elif get_pos().y > 0: motion.y = - vertical_speed
+
 	else:
 		#if motion.y < 0: motion.y = 0
 		if motion.y < terminal_velocity:
